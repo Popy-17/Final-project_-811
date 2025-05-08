@@ -6,13 +6,13 @@
 
 # Background
     In this project, Illumina HiSeq 2500 paired-end sequencing data (250 bp) was utilized to generate raw sequence data. The dataset consists of **four FASTQ files**:
-       - **Two forward reads** (denoted "R1")
-       - **Two reverse reads** (denoted "R2")
+       - Two forward reads (denoted "R1")
+       - Two reverse reads (denoted "R2")
 
     The goal of the project is to: 
-      1. Familiarize with various **bioinformatics tools**.
-      2. Work through the **sequencing pipeline**.
-      3. Reconstruct the raw sequencing data at **chromosome-level resolution**.
+      1. Familiarize with various bioinformatics tools.
+      2. Work through the sequencing pipeline.
+      3. Reconstruct the raw sequencing data at chromosome-level resolution.
    
 
 # Flowchart 
@@ -104,3 +104,8 @@
              -- Detects and removes adapter contamination.
              -- Applied to raw FASTQ files to clean up the reads prior to genome assembly or alignment.               
 
+       3. SPADES
+           
+             -- A versatile genome assembler designed primarily for Illumina sequencing data.
+             -- Input: Trimmed paired and unpaired FASTQ reads.
+             -- Output: Assembled genome in FASTA format, suitable for downstream analysis.

@@ -7,39 +7,74 @@
      - The project's goal is to reconstruct the raw sequence data at chromosome-level resolution.
 
 # Flowchart 
-     ================================================================================
-                          GENOME ASSEMBLY & ANNOTATION PIPELINE
-================================================================================
-
-  ● Raw Reads (FASTQ)
-     │
-     ├──[FASTQC]──→ Quality Report
-     │
-     └──[Trimmomatic]──→ Cleaned Reads (FASTQ)
-              │
-              └──[SPAdes]──→ Draft Genome (FASTA)
-                      │
-                      ├──[QUAST]──────→ Assembly Metrics
-                      │
-                      ├──[BUSCO]──────→ Completeness Report
-                      │
-                      └──[PROKKA]────→ Annotated Genome (GBK/FASTA)
-                              │
-                              ├──[BLASTn]─────────────┐
-                              │  (Taxonomy)           │
-                              │                       ↓
-                              │             Taxonomic Assignment (TSV)
-                              │
-                              └──[BLAST+]────────────┐
-                                 (Filtering)         │
-                                                     ↓
-                                           [BioBricks]→ Filtered Genome (FASTA)
-                                                             │
-                                                             └──[Comparative Genomics]
-                                                                   (Orthology/Phylogeny)
-
-================================================================================
-KEY:
-● = Input File   ──→ = Process Flow   [TOOL] = Analysis Step   ( ) = File Format
-================================================================================
+                               +-------------------+
+                      |   Raw Reads       |
+                      +-------------------+
+                               |
+                               v
+                      +-------------------+
+                      | Read Quality      |
+                      |    (FASTQC)       |
+                      +-------------------+
+                               |
+                               v
+                +----------------------------+
+                | Read Trimming and Filtering|
+                |  (Trimmomatic)             |
+                +----------------------------+
+                               |
+                               v
+                      +-------------------+
+                      |     FASTQ         |
+                      +-------------------+
+                               |
+                               v
+                      +-------------------+
+                      | Genome Assembly   |
+                      |    (SPAdes)       |
+                      +-------------------+
+                               |
+                               v
+                      +-------------------+
+                      |    FASTA          |
+                      +-------------------+
+                               |
+                               v
+                +----------------------------+
+                | Genome Annotation          |
+                |     (PROKKA)               |
+                +----------------------------+
+                               |
+                               v
+                +----------------------------+                      +-----------------------+
+                | Genome Assessment          |                      |  Comparative Genomics |
+                |  (Genome Coverage, BWA)    +---------------------> |                       |
+                +----------------------------+                      +-----------------------+
+                               |
+            +----------------------------------+
+            |    Taxonomic Assignment (BLAST) |
+            +----------------------------------+
+                               |
+                               v
+                      +-------------------+
+                      | Genome Contiguity  |
+                      |     (QUAST)       |
+                      +-------------------+
+                               |
+                               v
+                +----------------------------+
+                | Expected Gene Content      |
+                |     (BUSCO)               |
+                +----------------------------+
+                               |
+                               v
+                +----------------------------+
+                | Genome Filtering           |
+                |     (BlobTools)            |
+                +----------------------------+
+                               |
+                               v
+                      +-------------------+
+                      |    Filtered Genome|
+                      +-------------------+
 

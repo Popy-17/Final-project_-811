@@ -148,6 +148,7 @@
          
 # Results
        
-         N50 graph      
+## N50 graph
+![N50 Plot](n50_plot.png)      
 
-                    ![N50 Plot](n50_plot.png)
+                  

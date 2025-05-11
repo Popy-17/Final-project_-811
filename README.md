@@ -146,7 +146,8 @@
              -- BAM files provide coverage information, showing how well each region of the assembly is supported by reads.
              -- BlobTools then uses BAM-based coverage along with taxonomic BLAST results to identify and filter out potential contaminants.
          
-#Results
- 
-        ![Alt text](/home/users/pd1156/Final-project_-811/n50_plot.png)
+# Results
+       
+         N50 graph      
 
+                    ![N50 Plot](n50_plot.png)

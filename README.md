@@ -5,7 +5,7 @@
     Group Members: Popy Rani Debi, Ramesh JayaKumar
 
 # Background
-    In this project, Illumina HiSeq 2500 paired-end sequencing data (250 bp) was utilized to generate raw sequence data. The dataset consists of **four FASTQ files**:
+    In this project, Illumina HiSeq 2500 paired-end sequencing data (250 bp) was utilized to generate raw sequence data. The dataset consists of four FASTQ files:
        - Two forward reads (denoted "R1")
        - Two reverse reads (denoted "R2")
 
@@ -88,8 +88,15 @@
                       +-------------------+
                       |  Filtered Genome  |
                       +-------------------+
+                               |
+                               V
+                      +-------------------------+
+                      |  Genome Visualization   |
+                      |       (python)          |
+                      |                         |
+                      +-------------------------+
 
-  
+
 # Software tools
 
        1. FASTQC
@@ -104,8 +111,42 @@
              -- Detects and removes adapter contamination.
              -- Applied to raw FASTQ files to clean up the reads prior to genome assembly or alignment.               
 
-       3. SPADES
+       3. SPAdes
            
              -- A versatile genome assembler designed primarily for Illumina sequencing data.
              -- Input: Trimmed paired and unpaired FASTQ reads.
              -- Output: Assembled genome in FASTA format, suitable for downstream analysis.
+
+       4. PROKKA
+              
+             -- Provides fast and efficient annotation of de novo assembled prokaryotic genomes
+             -- Generates a wide range of useful files with priliminary genome_assembly file and after filtering, the final_fasta file including .gff, .gbk, .faa, .fna, .ffn, .tbl, and .sqn, which are ready for visualization, editing, or submission to public databases like GenBank.
+
+       5. BUSCO
+          
+            -- Used to evaluate the completeness of genome assembiles and the annotated gene products. 
+            -- It works by comparing the given sequences against the dataset from orthoDB, where universal genes present in a single copies with lineage. 
+            -- It provides output in on the basis of completness (single-copy, dublicated, fragmented or missing)
+ 
+       6. QUAST
+               
+            -- Used to assess the quality of genome assemblies and provides stats about how well a genome constructed from the sequence.
+            -- It provides output including the total number of contigs, largest contig length with N50 and GC content.
+
+      7. BLAST
+        
+            -- NCBI BLAST tool is used to compare the assembled sequence against database to find similar sequences.
+            -- It provides details such as % identity, alignment length, E-value and bit score.
+            -- BLASTn with the final filtered_file helps to detect the contamination of contigs against known sequences from UniVec.
+
+      8. SAM & BAM
+
+
+             -- SAM/BAM files are used to assess assembly quality by aligning sequencing reads back to the assembled contigs
+             -- BAM files provide coverage information, showing how well each region of the assembly is supported by reads.
+             -- BlobTools then uses BAM-based coverage along with taxonomic BLAST results to identify and filter out potential contaminants.
+         
+#Results
+ 
+        ![Alt text](/home/users/pd1156/Final-project_-811/n50_plot.png)
+

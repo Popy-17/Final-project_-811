@@ -151,7 +151,7 @@
 ![N50 Plot](n50_plot.png)      
                   
 ## Genome assembly
-![Unknown_bacterial_genome_assembly plot]('proksee (2).svg')
+![Unknown_bacterial_genome_assembly plot](proksee%20(2).svg)
 
 # Reference
 

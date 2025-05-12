@@ -74,7 +74,7 @@
                                |
                                v
                 +----------------------------+
-                |     Genome Assessment      |                     +-----------------------+ 
+                |       Read Mapping         |                     +-----------------------+ 
                 |                            |---------------------|  Comparative Genomics |
                 |  (Genome Coverage, BWA)    |                     +-----------------------+
                 +----------------------------+
@@ -100,48 +100,47 @@
 
 # Software tools
 
-       1. FASTQC
+       1. FASTQC (version: v0.12.1)
 
              -- FASTQC is a standard tool used for assessing the quality of sequencing reads before proceeding with high-throughput analysis.
              -- It was used both before and after trimming to evaluate the quality of raw reads and trimmed reads.
              -- Provides summary reports with visual plots showing per-base quality scores, GC content, adapter content, duplication levels, etc.
 
-       2. Trimmomatic
+       2. Trimmomatic (Version: 0.39)
 
              -- Trimmomatic is a flexible and efficient tool used to trim Illumina sequencing reads, removing adapters and low-quality sequences.
              -- Detects and removes adapter contamination.
              -- Applied to raw FASTQ files to clean up the reads prior to genome assembly or alignment.               
 
-       3. SPAdes
+       3. SPAdes (Version: v4.0.0)
            
              -- A versatile genome assembler designed primarily for Illumina sequencing data.
              -- Input: Trimmed paired and unpaired FASTQ reads.
              -- Output: Assembled genome in FASTA format, suitable for downstream analysis.
 
-       4. PROKKA
+       4. PROKKA (Version: 1.14.6)
               
              -- Provides fast and efficient annotation of de novo assembled prokaryotic genomes
              -- Generates a wide range of useful files with priliminary genome_assembly file and after filtering, the final_fasta file including .gff, .gbk, .faa, .fna, .ffn, .tbl, and .sqn, which are ready for visualization, editing, or submission to public databases like GenBank.
 
-       5. BUSCO
+       5. BUSCO (Version: 5.4.6) 
           
             -- Used to evaluate the completeness of genome assembiles and the annotated gene products. 
             -- It works by comparing the given sequences against the dataset from orthoDB, where universal genes present in a single copies with lineage. 
             -- It provides output in on the basis of completness (single-copy, dublicated, fragmented or missing)
  
-       6. QUAST
+       6. QUAST (Version: 5.2.0)
                
             -- Used to assess the quality of genome assemblies and provides stats about how well a genome constructed from the sequence.
             -- It provides output including the total number of contigs, largest contig length with N50 and GC content.
 
-      7. BLAST
+      7. BLAST (Version: 2.15.0+)
         
             -- NCBI BLAST tool is used to compare the assembled sequence against database to find similar sequences.
             -- It provides details such as % identity, alignment length, E-value and bit score.
             -- BLASTn with the final filtered_file helps to detect the contamination of contigs against known sequences from UniVec.
 
-      8. SAM & BAM
-
+      8. SAM & BAM (samtools version: 1.18; bamtools version: 2.5.2) 
 
              -- SAM/BAM files are used to assess assembly quality by aligning sequencing reads back to the assembled contigs
              -- BAM files provide coverage information, showing how well each region of the assembly is supported by reads.

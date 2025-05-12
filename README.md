@@ -13,6 +13,7 @@
       1. Familiarize with various bioinformatics tools.
       2. Work through the sequencing pipeline.
       3. Reconstruct the raw sequencing data at chromosome-level resolution.
+      4. To determine various aspects of the initial raw reads from counting the total number of reads to visualization of the reads.
    
 
 # Flowchart 
@@ -164,5 +165,7 @@
 7) Mosè Manni, Matthew R Berkeley, Mathieu Seppey, Felipe A Simão, Evgeny M Zdobnov, BUSCO Update: Novel and Streamlined Workflows along with Broader and Deeper Phylogenetic Coverage for Scoring of Eukaryotic, Prokaryotic, and Viral Genomes, Molecular Biology and Evolution, Volume 38, Issue 10, October 2021, Pages 4647–4654, https://doi.org/10.1093/molbev/msab199
 8) Prjibelski, A., Antipov, D., Meleshko, D., Lapidus, A. and Korobeynikov, A., 2020. Using SPAdes de novo assembler. Current protocols in bioinformatics, 70(1), p.e102. doi.org/10.1002/cpbi.102
 9) Torsten Seemann, Prokka: rapid prokaryotic genome annotation, Bioinformatics, Volume 30, Issue 14, July 2014, Pages 2068–2069, https://doi.org/10.1093/bioinformatics/btu153
+10) https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwj3lOvE4ZyNAxVxlYkEHQ3-B2wQFnoECBsQAQ&url=https%3A%2F%2Fgithub.com%2Fablab%2Fspades&usg=AOvVaw2912BMAGI5I8vZ59pL_56_&opi=89978449
+11) https://www.bing.com/ck/a?!&&p=b0008d55403adc16fd9555b0e5963ac925ecd6dfcf40d1ffad8760157837a785JmltdHM9MTc0NjkyMTYwMA&ptn=3&ver=2&hsh=4&fclid=0eddd476-cbbe-6669-0a71-c1bdcadf67e9&psq=trimmomatic&u=a1aHR0cHM6Ly9naXRodWIuY29tL3VzYWRlbGxhYi9UcmltbW9tYXRpYw&ntb=1
 
 

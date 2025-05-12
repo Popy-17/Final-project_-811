@@ -17,7 +17,7 @@
 
 # Flowchart 
 
-![Workflow](Presentation.jpg)
+![Flowchart](Presentation.jpg)
 
 
 # Software tools
